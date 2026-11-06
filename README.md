@@ -3,6 +3,17 @@
 Restored, canonical metadata and artwork for the original **Proud Lions Club (PLC)** ERC-721
 collection on Ethereum mainnet.
 
+> ### Do not rename this repository or the account that owns it
+>
+> The Proud Lions Club contract on Ethereum mainnet has this repository's GitHub Pages URL
+> written into its `baseURI` on-chain. Renaming the repo, renaming the `kinglionX69` account,
+> making the repo private, transferring it, or disabling GitHub Pages will break the artwork
+> and traits for all 2,013 tokens everywhere they are displayed, and fixing it costs another
+> on-chain transaction from the contract owner wallet.
+>
+> If this ever needs to move, put a custom domain in front of it first (CNAME to GitHub Pages),
+> repoint the domain, and the contract never has to change again.
+
 | | |
 |---|---|
 | Contract | [`0xA83B409bE1Ad79EF27d8e14a3d6aAeD7B40959Dc`](https://etherscan.io/token/0xA83B409bE1Ad79EF27d8e14a3d6aAeD7B40959Dc) |
@@ -30,4 +41,4 @@ left as placeholders in that master (35, 36, 38, 135, 145, 237, 889, 890, 1004, 
 7649) were restored from the reveal 2.0 master, which holds their real traits.
 
 Token names and image paths were normalised so that `meta/<id>.json` always describes token
-`<id>` — a handful of records in the source masters carried a mismatched `name` field.
+`<id>`. A handful of records in the source masters carried a mismatched `name` field.
