@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proud Lions Club</title>
+<style>
+  :root{ --bg:#faf8f5; --fg:#1a1714; --muted:#6b635a; --line:#e4ddd3; --card:#fff; }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#131110; --fg:#f2ede7; --muted:#9c9289; --line:#2b2724; --card:#1c1917; } }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font:16px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .wrap{max-width:1100px;margin:0 auto;padding:64px 16px 96px}
+  h1{font-size:clamp(28px,5vw,44px);letter-spacing:-.02em;margin:0 0 8px;font-weight:650}
+  .sub{color:var(--muted);margin:0 0 40px;max-width:60ch}
+  dl{display:grid;grid-template-columns:auto 1fr;gap:10px 24px;margin:0 0 40px;
+     padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+  dt{color:var(--muted);white-space:nowrap}
+  dd{margin:0;font-variant-numeric:tabular-nums;word-break:break-all}
+  code{font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
+       background:color-mix(in srgb,var(--fg) 7%,transparent);padding:2px 6px;border-radius:5px}
+  a{color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--muted)}
+  a:hover{text-decoration-color:currentColor}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .grid figure{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+  .grid img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+  .grid figcaption{padding:8px 10px;font-size:13px;color:var(--muted);
+                   font-variant-numeric:tabular-nums}
+  h2{font-size:20px;margin:0 0 16px;font-weight:600}
+  .row{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+  button{font:inherit;padding:8px 16px;border:1px solid var(--line);border-radius:999px;
+         background:var(--card);color:inherit;cursor:pointer}
+  button:hover{border-color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Proud Lions Club</h1>
+  <p class="sub">Canonical metadata and artwork for the original PLC collection on Ethereum mainnet.
+     This site is the token URI host for the contract below.</p>
+
+  <dl>
+    <dt>Contract</dt>
+    <dd><a href="https://etherscan.io/token/0xA83B409bE1Ad79EF27d8e14a3d6aAeD7B40959Dc">0xA83B409bE1Ad79EF27d8e14a3d6aAeD7B40959Dc</a></dd>
+    <dt>Minted supply</dt><dd>2,013</dd>
+    <dt>Base URI</dt><dd><code>https://kinglionx69.github.io/plc-metadata/meta/</code></dd>
+    <dt>Token URI</dt><dd><code>&lt;baseURI&gt;&lt;tokenId&gt;.json</code></dd>
+    <dt>Project</dt><dd><a href="https://www.proudlionsclub.com">proudlionsclub.com</a></dd>
+  </dl>
+
+  <div class="row">
+    <h2>Sample of the collection</h2>
+    <button id="shuffle" type="button">Shuffle</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+<script>
+const IDS_URL = "ids.json";
+let ids = [];
+const grid = document.getElementById("grid");
+function draw(){
+  const pick = [...ids].sort(()=>Math.random()-0.5).slice(0,24);
+  grid.innerHTML = pick.map(id =>
+    `<figure><img loading="lazy" src="images/${id}.webp" alt="Proud Lions Club #${id}" width="1080" height="1080">
+     <figcaption><a href="meta/${id}.json">#${id}</a></figcaption></figure>`).join("");
+}
+fetch(IDS_URL).then(r=>r.json()).then(j=>{ ids=j; draw(); })
+  .catch(()=>{ grid.innerHTML = "<p>Could not load token list.</p>"; });
+document.getElementById("shuffle").addEventListener("click", draw);
+</script>
+</body>
+</html>

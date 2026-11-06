@@ -1,0 +1,57 @@
+{
+ "name": "Proud Lions Club #1709",
+ "description": "A collection of Warrior Lions and Lionesses. These NFTs are your virtual pass into the Travel world and the P2E Metaverse: The Lionverse. Travel the globe to earn rewards, stake to earn daily utility tokens, and morph and breed them to upgrade their rarity and unlock the Ethernal Cubs Collection.",
+ "image": "https://kinglionx69.github.io/plc-metadata/images/1709.webp",
+ "external_url": "https://www.proudlionsclub.com",
+ "attributes": [
+  {
+   "trait_type": "Background",
+   "value": "Pinnawela"
+  },
+  {
+   "trait_type": "Inventory",
+   "value": "None"
+  },
+  {
+   "trait_type": "Tail",
+   "value": "Shuna"
+  },
+  {
+   "trait_type": "Body",
+   "value": "War Armor"
+  },
+  {
+   "trait_type": "Face",
+   "value": "Standard"
+  },
+  {
+   "trait_type": "Eyes",
+   "value": "Shuna"
+  },
+  {
+   "trait_type": "Mane",
+   "value": "Shuna"
+  },
+  {
+   "trait_type": "Equipped",
+   "value": "None"
+  },
+  {
+   "trait_type": "Rarity",
+   "value": "Delta"
+  },
+  {
+   "trait_type": "Staking Power",
+   "value": "70%"
+  },
+  {
+   "trait_type": "Breeding Counter",
+   "value": "5"
+  },
+  {
+   "trait_type": "Sex",
+   "value": "Female"
+  }
+ ],
+ "original_image_ipfs": "ipfs://Qmbc9geseQBpwe8uX2tRHczrbWAchd21tqrtakjPNygqag/1709.png"
+}
